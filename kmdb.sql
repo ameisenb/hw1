@@ -144,6 +144,7 @@ VALUES
 ('Batman Begins', 2005, 'PG-13', 'Warner Bros')
 ('The Dark Knight', 2008, 'PG-13', 'Warner Bros')
 ('The Dark Knight Rises', 2012, 'PG-13', 'Warner Bros')
+;
 
 INSERT INTO stars (name, actor_id, character_name, film_id)
 VALUES
@@ -162,6 +163,7 @@ VALUES
 ('Tom Hardy', 9, "Bane", 3)
 ('Joseph Gordon-Levitt', 10, "John Blake", 3)
 ('Anne Hathway', 11, 'Selina Kyle', 3)
+;
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -169,7 +171,12 @@ VALUES
 .print ""
 
 -- The SQL statement for the movies output
+-- TODO!
 
+FROM movies 
+SELECT *
+ORDER BY year DESC
+;
 
 -- Prints a header for the cast output
 .print ""
@@ -180,3 +187,8 @@ VALUES
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title, stars.name, stars.character_name
+FROM movies INNER JOIN stars ON movies.id = stars.film_id
+ORDER BY year DESC, actor_id
+;
