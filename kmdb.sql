@@ -123,6 +123,7 @@ CREATE TABLE movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT,
   year INTEGER,
+  rating TEXT,
   studio TEXT,
 );
 
@@ -138,13 +139,37 @@ CREATE TABLE stars (
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+INSERT INTO movies (title, year, rating, studio)
+VALUES
+('Batman Begins', 2005, 'PG-13', 'Warner Bros')
+('The Dark Knight', 2008, 'PG-13', 'Warner Bros')
+('The Dark Knight Rises', 2012, 'PG-13', 'Warner Bros')
+
+INSERT INTO stars (name, actor_id, character_name, film_id)
+VALUES
+('Christian Bale', 1, "Bruce Wayne", 1)
+('Michael Caine', 4, 'Alfred Pennyworth', 1)
+('Liam Neeson', 5, "Ra's Al Ghul", 1)
+('Katie Holmes', 6, "Rachel Dawes", 1)
+('Gary Oldman', 7, 'Commissioner Gordon', 1)
+('Christian Bale', 1, "Bruce Wayne", 2)
+('Heath Ledger', 2, 'Joker', 2)
+('Michael Caine', 4, 'Alfred Pennyworth', 2)
+('Aaron Eclhart', 3, 'Harvey Dent', 2)
+('Maggie Gyllenhaal', 8, 'Rachel Dawes', 2)
+('Christian Bale', 1, "Bruce Wayne", 3)
+('Gary Oldman', 7, 'Commissioner Gordon', 3)
+('Tom Hardy', 9, "Bane", 3)
+('Joseph Gordon-Levitt', 10, "John Blake", 3)
+('Anne Hathway', 11, 'Selina Kyle', 3)
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+
 
 -- Prints a header for the cast output
 .print ""
