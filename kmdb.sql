@@ -143,7 +143,7 @@ INSERT INTO movies (title, year, rating, studio)
 VALUES
 ('Batman Begins', 2005, 'PG-13', 'Warner Bros'),
 ('The Dark Knight', 2008, 'PG-13', 'Warner Bros'),
-('The Dark Knight Rises', 2012, 'PG-13', 'Warner Bros'),
+('The Dark Knight Rises', 2012, 'PG-13', 'Warner Bros')
 ;
 
 INSERT INTO stars (name, actor_id, character_name, film_id)
@@ -173,8 +173,8 @@ VALUES
 -- The SQL statement for the movies output
 -- TODO!
  
-SELECT * FROM movies
-ORDER BY year DESC
+SELECT title, year, rating, studio FROM movies
+ORDER BY year
 ;
 
 -- Prints a header for the cast output
@@ -189,5 +189,5 @@ ORDER BY year DESC
 
 SELECT movies.title, stars.name, stars.character_name
 FROM movies INNER JOIN stars ON movies.id = stars.film_id
-ORDER BY year DESC, actor_id
+ORDER BY year, actor_id
 ;
